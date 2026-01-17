@@ -15,4 +15,9 @@ public class Controller {
     public String testApi2() {
         return "Test case 2"; // ✅ response
     }
+
+    @GetMapping("/test3")
+    public String testApi3() {
+        return "Test case 3"; // ✅ response
+    }
 }
