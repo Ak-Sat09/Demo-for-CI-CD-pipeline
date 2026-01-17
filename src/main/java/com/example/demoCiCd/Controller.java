@@ -10,4 +10,9 @@ public class Controller {
     public String testApi() {
         return "Test case 1"; // ✅ response
     }
+
+    @GetMapping("/test2")
+    public String testApi2() {
+        return "Test case 2"; // ✅ response
+    }
 }
