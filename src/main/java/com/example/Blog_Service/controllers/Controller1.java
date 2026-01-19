@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller1 {
 
     @GetMapping
-    public String helloApi11() {
+    public String helloApi1() {
         return "Hello from Controller11!";
     }
 }
