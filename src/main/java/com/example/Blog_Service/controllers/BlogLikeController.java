@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/likes")
+@CrossOrigin(origins = "*")
 @RequiredArgsConstructor
 public class BlogLikeController {
 
