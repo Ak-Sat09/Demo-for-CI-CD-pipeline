@@ -16,7 +16,6 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/blogs")
-@CrossOrigin(origins = "*")
 @RequiredArgsConstructor
 public class BlogController {
 
