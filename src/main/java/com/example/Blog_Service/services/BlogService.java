@@ -1,15 +1,19 @@
 package com.example.Blog_Service.services;
 
 import java.util.List;
-
+ 
 import com.example.Blog_Service.dto.CreateBlogRequest;
-import com.example.Blog_Service.entity.Blog;
+import com.example.Blog_Service.entity.Blog; 
 
 public interface BlogService {
 
     Blog create(CreateBlogRequest request, Long userId);
 
     Blog getById(Long blogId);
+ 
 
     List<Blog> getAll();
+
+    public Blog update(Long id, String title, String content);
+
 }

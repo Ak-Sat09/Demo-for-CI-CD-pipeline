@@ -1,6 +1,6 @@
 package com.example.Blog_Service.controllers;
 
-import java.util.List;
+import java.util.List; 
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,14 +31,7 @@ public class BlogController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
 
-        String token = authorizationHeader.substring(7).trim(); // remove "Bearer "
-        Long userId;
-        try {
-            userId = jwtUtils.getUserIdFromToken(token); // ideally returns Long
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-        }
-
+        Long userId = jwtUtils.getUserIdFromToken(authorizationHeader.substring(7).trim());
         Blog blog = service.create(request, userId);
         return ResponseEntity.ok(blog);
     }
@@ -51,8 +44,11 @@ public class BlogController {
 
     @GetMapping
     public ResponseEntity<List<Blog>> getAllBlogs() {
-        List<Blog> blogs = service.getAll();
-        return ResponseEntity.ok(blogs);
+        return ResponseEntity.ok(service.getAll());
     }
+ 
+
+ 
+
 
 }
